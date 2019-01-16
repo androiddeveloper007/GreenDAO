@@ -1,0 +1,28 @@
+1、懒加载
+listLazy多表关联时，只有在使用到关联表时，才会生成对应的java集合
+listLazy和listLazyUncached都需要手动关闭cursor游标。
+
+2、条件查询：
+Bean bean = dao.queryBuilder().where(dao.Properties.Name.eq("nate")).unique();
+List data = dao.queryBuilder().where(dao.Properties.Name.like("nate%")).list();
+List data = dao.queryBuilder().where(dao.Properties.Age.between(12,20)).list();
+List data = dao.queryBuilder().where(dao.Properties.Age.gt(18)).list();//大于
+List data = dao.queryBuilder().where(dao.Properties.Age.lt(18)).list();//小于
+
+3、原生sql查询
+
+4、多线程查询
+提高速率
+
+
+5、在控制台中查看操作sqlite数据库:
+a,adb shell
+b,cd data/data/
+c,cd packagename
+d,cd databases/
+e,sqlite3 dbname .table查询当前数据库中表列表
+f,select * from tablename
+
+6、1v1查询可以减少内存和cpu开销，在执行get时才会查询数据库
+
+7、1对多的查询，
